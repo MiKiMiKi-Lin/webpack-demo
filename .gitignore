@@ -1,12 +1,11 @@
 
 # dependencies
-/node_modules
-/yarn.lock
-/yarn-error.log
+/**/node_modules
+/**/yarn-error.log
 
 # production
-/dist
-/output
+/**/dist
+/**/output
 
 # misc
 .DS_Store
