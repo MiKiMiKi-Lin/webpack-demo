@@ -1,7 +1,14 @@
-*.ss~
-*.ss#*
-.#*.ss
 
-*.scm~
-*.scm#*
-.#*.scm
+# dependencies
+/node_modules
+/yarn.lock
+/yarn-error.log
+
+# production
+/dist
+/output
+
+# misc
+.DS_Store
+
+
