@@ -3,6 +3,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin') // 抽取css
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -14,7 +16,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          // 'style-loader', // 样式通过style标签注入
+          MiniCSSExtractPlugin.loader, // 可将css抽取出独立的css文件，直接通过 link 标签引入（未压缩）
+          'css-loader',
+        ],
       },
     ],
   },
@@ -23,5 +29,6 @@ module.exports = {
       title: 'Webpack Demo',
       template: './src/index.html',
     }),
+    new MiniCSSExtractPlugin(),
   ],
 }
